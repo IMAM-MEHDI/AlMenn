@@ -1,0 +1,18 @@
+{
+  "name": "almenn-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for AlMenn educational AI assistant",
+  "main": "index.html",
+  "scripts": {
+    "dev": "serve -s . -l 3000",
+    "build": "echo 'No build step required for static HTML/CSS/JS'",
+    "start": "serve -s . -l 3000"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "keywords": ["education", "ai", "assistant"],
+  "author": "AlMenn Team",
+  "license": "MIT"
+}

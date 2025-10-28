@@ -1,0 +1,23 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic[email]==2.5.0
+sqlalchemy==2.0.44  # Updated to match installed version
+psycopg2-binary>=2.9.9  # PostgreSQL adapter, install after setting up PostgreSQL
+redis==5.0.1
+celery==5.3.4
+torch>=2.0.0  # PyTorch, install separately if needed for neural nets
+transformers>=4.35.0  # Hugging Face, install separately if needed
+sentence-transformers>=2.2.0  # For embeddings - use latest compatible version
+# pinecone-client==2.2.4  # For vector DB, can be replaced with open-source if needed
+boto3==1.34.0  # For S3-compatible storage
+python-multipart==0.0.6  # For file uploads
+python-jose[cryptography]==3.3.0  # For JWT/auth
+passlib[bcrypt]==1.7.4  # For password hashing (if needed, but email-only)
+python-dotenv==1.0.0  # For environment variables
+phonepe==1.0.1  # For PhonePe payments
+slowapi==0.1.9  # Rate limiting
+prometheus-client==0.23.1  # Metrics
+cryptography==41.0.7  # Encryption
+pytest==7.4.3
+pytest-asyncio==0.21.1
+httpx==0.25.2

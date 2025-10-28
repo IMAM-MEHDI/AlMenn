@@ -1,0 +1,87 @@
+# Database Configuration
+DATABASE_URL=sqlite:///app.db
+# For Railway: DATABASE_URL will be auto-provided
+
+# Redis Configuration
+REDIS_URL=redis://localhost:6379
+# For Railway: REDIS_URL will be auto-provided
+
+# Security
+SECRET_KEY=your-super-secret-key-here-change-this-in-production
+ENCRYPTION_KEY=your-32-character-encryption-key-here
+
+# AI Services
+#OPENAI_API_KEY=your-openai-api-key-here
+PINECONE_API_KEY=pcsk_3LH1B2_8BXfyd4mx1K3ZtYpF6DydKrLnrgjsErMD8H1feMPW6qxxLGnCP3Guqor8d5CTSM
+
+# AWS Services (for file storage)
+AWS_ACCESS_KEY_ID=your-aws-access-key
+AWS_SECRET_ACCESS_KEY=your-aws-secret-key
+AWS_REGION=us-east-1
+S3_BUCKET_NAME=your-s3-bucket-name
+
+# Email Configuration
+SMTP_SERVER=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USERNAME=imammehdi607@gmail.com
+SMTP_PASSWORD=6001867504i
+FROM_EMAIL=noreply@almenn.ai
+
+# PhonePe Payment Gateway (replacing Razorpay)
+PHONEPE_MERCHANT_ID=your-phonepe-merchant-id
+PHONEPE_SALT_KEY=your-phonepe-salt-key
+PHONEPE_SALT_INDEX=your-phonepe-salt-index
+
+# Application Settings
+BASE_URL=http://localhost:8000
+FRONTEND_URL=http://localhost:3000
+ENVIRONMENT=development
+
+# Admin Configuration
+ADMIN_EMAIL=imammehdi607@gmail.com
+ADMIN_PASSWORD=6001867504i
+
+# Model Inference Service
+MODEL_INFERENCE_URL=http://localhost:8001
+
+# Logging
+LOG_LEVEL=INFO
+
+# Rate Limiting
+RATE_LIMIT_REQUESTS=100
+RATE_LIMIT_WINDOW=60
+
+# File Upload
+MAX_FILE_SIZE=10485760  # 10MB
+ALLOWED_EXTENSIONS=pdf,txt,doc,docx
+
+# AI Model Settings
+DEFAULT_MODEL=gpt-3.5-turbo
+MAX_TOKENS=4096
+TEMPERATURE=0.7
+
+# Database Pool Settings
+DB_POOL_SIZE=10
+DB_MAX_OVERFLOW=20
+
+# Cache Settings
+CACHE_TTL=3600  # 1 hour
+REDIS_CACHE_DB=1
+
+# Monitoring
+ENABLE_METRICS=true
+METRICS_PORT=9090
+
+# Security Headers
+CORS_ORIGINS=["http://localhost:3000", "http://localhost:8000"]
+SECURE_COOKIES=false
+
+# Feature Flags
+ENABLE_PAYMENTS=true
+ENABLE_ANALYTICS=true
+ENABLE_FEEDBACK=true
+ENABLE_AB_TESTING=false
+
+# Third-party Integrations
+SLACK_WEBHOOK_URL=your-slack-webhook-url
+DISCORD_WEBHOOK_URL=your-discord-webhook-url

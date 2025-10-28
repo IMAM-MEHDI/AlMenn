@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlMenn AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-blue-600 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <h1 class="text-2xl font-bold">AlMenn AI</h1>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#" class="nav-link hover:text-blue-200 transition-colors" data-page="home">Home</a>
+                    <a href="#" class="nav-link hover:text-blue-200 transition-colors" data-page="ai-chat">AI Chat</a>
+                    <a href="#" class="nav-link hover:text-blue-200 transition-colors" data-page="wallet">Wallet</a>
+                    <a href="#" class="nav-link hover:text-blue-200 transition-colors" data-page="global-chat">Global Chat</a>
+                    <a href="#" class="nav-link hover:text-blue-200 transition-colors" data-page="about">About</a>
+                    <a href="#" class="nav-link hover:text-blue-200 transition-colors" data-page="login" id="login-link">Login</a>
+                    <a href="#" class="nav-link hover:text-blue-200 transition-colors hidden" data-page="admin-chat" id="admin-link">Admin</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <!-- Dark/Light Mode Toggle -->
+                    <button id="theme-toggle" class="text-white hover:text-blue-200 transition-colors p-2 rounded-lg hover:bg-blue-700">
+                        <svg id="theme-icon-sun" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <svg id="theme-icon-moon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" class="text-white focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-700 px-4 py-2">
+            <a href="#" class="nav-link block py-2 hover:text-blue-200 transition-colors" data-page="home">Home</a>
+            <a href="#" class="nav-link block py-2 hover:text-blue-200 transition-colors" data-page="ai-chat">AI Chat</a>
+            <a href="#" class="nav-link block py-2 hover:text-blue-200 transition-colors" data-page="wallet">Wallet</a>
+            <a href="#" class="nav-link block py-2 hover:text-blue-200 transition-colors" data-page="global-chat">Global Chat</a>
+            <a href="#" class="nav-link block py-2 hover:text-blue-200 transition-colors" data-page="about">About</a>
+            <a href="#" class="nav-link block py-2 hover:text-blue-200 transition-colors" data-page="login" id="mobile-login-link">Login</a>
+            <a href="#" class="nav-link block py-2 hover:text-blue-200 transition-colors hidden" data-page="admin-chat" id="mobile-admin-link">Admin</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="min-h-screen">
+        <!-- Home Page -->
+        <section id="home" class="page max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Welcome to AlMenn</h2>
+                <p class="text-xl text-gray-600 mb-8">Education-Focused AI Assistant for Enhanced Learning</p>
+                <div class="bg-blue-50 rounded-lg p-6 mb-8">
+                    <video class="w-full max-w-4xl mx-auto rounded-lg shadow-lg" controls poster="https://via.placeholder.com/800x400?text=AlMenn+AI+Demo">
+                        <source src="#" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">AI-Powered Learning</h3>
+                    <p class="text-gray-600">Advanced AI assistance for educational queries, homework help, and concept explanations.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">File Analysis</h3>
+                    <p class="text-gray-600">Upload documents, PDFs, and images for AI-powered analysis and insights.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">Real-time Collaboration</h3>
+                    <p class="text-gray-600">Connect with other learners through our global chat and discussion forums.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+                <h3 class="text-2xl font-bold text-center mb-6">Coin Plans</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="border rounded-lg p-6 text-center">
+                        <h4 class="text-xl font-semibold mb-2">Starter</h4>
+                        <p class="text-3xl font-bold text-blue-600 mb-4">15 Coins</p>
+                        <p class="text-gray-600 mb-4">Perfect for trying out our AI features</p>
+                        <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Get Started</button>
+                    </div>
+                    <div class="border-2 border-blue-500 rounded-lg p-6 text-center bg-blue-50">
+                        <h4 class="text-xl font-semibold mb-2">Popular</h4>
+                        <p class="text-3xl font-bold text-blue-600 mb-4">35 Coins</p>
+                        <p class="text-gray-600 mb-4">Most popular choice for regular learners</p>
+                        <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Choose Plan</button>
+                    </div>
+                    <div class="border rounded-lg p-6 text-center">
+                        <h4 class="text-xl font-semibold mb-2">Premium</h4>
+                        <p class="text-3xl font-bold text-blue-600 mb-4">75 Coins</p>
+                        <p class="text-gray-600 mb-4">Unlimited access for power users</p>
+                        <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Go Premium</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors" onclick="showPage('login')">
+                    Start Learning with AlMenn AI
+                </button>
+            </div>
+        </section>
+
+        <!-- Login Page -->
+        <section id="login" class="page max-w-md mx-auto px-4 py-12">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-2xl font-bold text-center mb-6">Login to AlMenn</h2>
+                <form id="login-form" class="space-y-4">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="email" name="email" required
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">
+                        Login
+                    </button>
+                </form>
+                <div id="login-message" class="mt-4 text-center text-sm text-gray-600 hidden"></div>
+            </div>
+        </section>
+
+        <!-- AI Chat Interface -->
+        <section id="ai-chat" class="page h-screen flex flex-col">
+            <!-- Top Bar -->
+            <div class="bg-white border-b px-4 py-3 flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600">Session: <span id="session-time">0 min</span> left today</span>
+                    <button id="start-session" class="bg-green-600 text-white px-4 py-1 rounded text-sm hover:bg-green-700">Start (4 coins)</button>
+                    <button id="extend-session" class="bg-blue-600 text-white px-4 py-1 rounded text-sm hover:bg-blue-700 hidden">Extend (4 coins)</button>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600">Coins: <span id="coin-balance">0</span></span>
+                    <button class="bg-yellow-500 text-white px-4 py-1 rounded text-sm hover:bg-yellow-600" onclick="showPage('wallet')">RECHARGE</button>
+                </div>
+            </div>
+
+            <!-- Main Chat Area -->
+            <div class="flex-1 flex">
+                <!-- Left Sidebar - Files -->
+                <div class="w-80 bg-gray-50 border-r p-4">
+                    <h3 class="font-semibold mb-4">Your Files</h3>
+                    <div id="file-list" class="space-y-2 mb-4">
+                        <!-- Files will be populated here -->
+                    </div>
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+                        <input type="file" id="file-upload" multiple class="hidden">
+                        <button onclick="document.getElementById('file-upload').click()"
+                                class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                            Upload Files
+                        </button>
+                        <p class="text-sm text-gray-500 mt-2">PDF, DOC, TXT, Images supported</p>
+                    </div>
+                </div>
+
+                <!-- Middle - Chat Window -->
+                <div class="flex-1 flex flex-col relative">
+                    <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 pb-20">
+                        <!-- Messages will be populated here -->
+                    </div>
+                    <!-- Fixed Input Bar at Bottom -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-white border-t p-4">
+                        <div class="flex space-x-2">
+                            <input type="text" id="chat-input" placeholder="Ask your question..."
+                                   class="flex-1 px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <button id="send-message" class="bg-blue-600 text-white px-6 py-2 rounded-r-md hover:bg-blue-700">
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar - Resources -->
+                <div class="w-80 bg-gray-50 border-l p-4">
+                    <h3 class="font-semibold mb-4">Related Resources</h3>
+                    <div id="resources-list" class="space-y-2">
+                        <!-- Resources will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coin Wallet & Recharge -->
+        <section id="wallet" class="page max-w-4xl mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold mb-8">Coin Wallet</h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Balance & History -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">Your Balance</h3>
+                    <div class="text-3xl font-bold text-blue-600 mb-4" id="wallet-balance">0 Coins</div>
+                    <h4 class="font-semibold mb-2">Transaction History</h4>
+                    <div id="transaction-history" class="space-y-2 max-h-64 overflow-y-auto">
+                        <!-- Transactions will be populated here -->
+                    </div>
+                </div>
+
+                <!-- Recharge Packages -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">Recharge Packages</h3>
+                    <div class="space-y-4">
+                        <div class="border rounded-lg p-4 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-semibold">15 Coins</h4>
+                                <p class="text-sm text-gray-600">7 /-</p>
+                            </div>
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 buy-coins" data-amount="15" data-price="7">
+                                Buy
+                            </button>
+                        </div>
+                        <div class="border rounded-lg p-4 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-semibold">35 Coins</h4>
+                                <p class="text-sm text-gray-600">14 /-</p>
+                            </div>
+                            <button class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 buy-coins" data-amount="35" data-price="14">
+                                Buy
+                            </button>
+                        </div>
+                        <div class="border rounded-lg p-4 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-semibold">70 Coins</h4>
+                                <p class="text-sm text-gray-600">21 /-</p>
+                            </div>
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 buy-coins" data-amount="75" data-price="21">
+                                Buy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Chat -->
+        <section id="global-chat" class="page h-screen flex flex-col">
+            <div class="bg-white border-b px-4 py-3">
+                <h2 class="text-xl font-semibold">Global User Chat</h2>
+                <p class="text-sm text-gray-600">Connect with other learners worldwide</p>
+            </div>
+
+            <div class="flex-1 flex">
+                <!-- Chat Messages -->
+                <div class="flex-1 flex flex-col">
+                    <div id="global-messages" class="flex-1 p-4 overflow-y-auto space-y-4">
+                        <!-- Global messages will be populated here -->
+                    </div>
+                    <div class="border-t p-4">
+                        <div class="flex space-x-2">
+                            <input type="text" id="global-input" placeholder="Share your thoughts..."
+                                   class="flex-1 px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <button id="send-global" class="bg-blue-600 text-white px-6 py-2 rounded-r-md hover:bg-blue-700">
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Online Users -->
+                <div class="w-64 bg-gray-50 border-l p-4">
+                    <h3 class="font-semibold mb-4">Online Users</h3>
+                    <div id="online-users" class="space-y-2">
+                        <!-- Online users will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Chat -->
+        <section id="admin-chat" class="page h-screen flex flex-col">
+            <div class="bg-white border-b px-4 py-3">
+                <h2 class="text-xl font-semibold">Admin Support Chat</h2>
+                <p class="text-sm text-gray-600">Private messaging with AlMenn administrators</p>
+            </div>
+
+            <div class="flex-1 flex flex-col">
+                <div id="admin-messages" class="flex-1 p-4 overflow-y-auto space-y-4">
+                    <!-- Admin messages will be populated here -->
+                </div>
+                <div class="border-t p-4">
+                    <div class="flex space-x-2">
+                        <input type="text" id="admin-input" placeholder="Message admin..."
+                               class="flex-1 px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button id="send-admin" class="bg-red-600 text-white px-6 py-2 rounded-r-md hover:bg-red-700">
+                            Send
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page max-w-4xl mx-auto px-4 py-12">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">About AlMenn</h2>
+                <p class="text-xl text-gray-600">Revolutionizing education through AI-powered learning assistance</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Our Mission</h3>
+                    <p class="text-gray-700 mb-4">
+                        AlMenn is dedicated to making education more accessible and effective through advanced AI technology.
+                        We provide personalized learning assistance, intelligent document analysis, and collaborative learning environments.
+                    </p>
+                    <p class="text-gray-700">
+                        Our platform combines cutting-edge AI models with educational best practices to help learners of all levels
+                        achieve their academic goals.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Features</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• AI-powered Q&A and explanations</li>
+                        <li>• Document and file analysis</li>
+                        <li>• Real-time collaborative learning</li>
+                        <li>• Visual content rendering (MathJax, Mermaid)</li>
+                        <li>• Secure authentication and privacy</li>
+                        <li>• Coin-based usage system</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-8 text-center">
+                <h3 class="text-2xl font-semibold mb-4">Contact Us</h3>
+                <p class="text-gray-600 mb-4">Have questions or feedback? We'd love to hear from you!</p>
+                <div class="space-y-2">
+                    <p><strong>Email:</strong> support@almenn.ai</p>
+                    <p><strong>Website:</strong> <a href="#" class="text-blue-600 hover:underline">www.almenn.ai</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg p-6 text-center">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="error-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg p-6 max-w-md mx-4">
+            <h3 class="text-lg font-semibold mb-4">Error</h3>
+            <p id="error-message" class="text-gray-700 mb-4"></p>
+            <button onclick="closeErrorModal()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
